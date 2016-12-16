@@ -8,5 +8,6 @@ updateAngularScope("your function name or property name of angular's scope",true
 
 Example(change user.name value)
 updateAngularScope("user.name",false,"userinfo","new name");
+
 Example(execute verifies.updateVerifyCode)
 updateAngularScope("verifies.updateVerifyCode",true,"userinfo");
