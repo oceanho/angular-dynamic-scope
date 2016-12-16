@@ -7,6 +7,8 @@
                 ngElScope = $angular.element(document.getElementById(elOrElIdOrNgScope)).scope();
             } else if ($angular.isElement(elOrElIdOrNgScope)) {
                 ngElScope = $angular.element(elOrElIdOrNgScope).scope();
+            } else if (elOrElIdOrNgScope.$apply instanceof Function) {
+                ngElScope = elOrElIdOrNgScope;
             } else {
                 throw new Error("invalid elOrElIdOrNgScope,elOrElIdOrNgScope should be Element/NgScope/ElementId");
             }
