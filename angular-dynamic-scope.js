@@ -1,7 +1,7 @@
 function updateAngularScope(key, isFun, elOrelId, valueOrParam) {
         var el;
         if(typeof elOrelId ==="string"){
-          el = document.getElementById("tenant.views.appinfo.createOrEditModal_controller");
+          el = document.getElementById(elOrelId);
         }else{
           el = elOrelId;
         }
