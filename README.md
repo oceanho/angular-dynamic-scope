@@ -2,13 +2,32 @@
 It's update property or execute function at any where for Angular's scope
 
 # how use?
-include angular-dynamic-scope.js to your project
+include angular-dynamic-scope.js to your project,and like fllow ↓
 
-Here is function
-updateAngularScope("your function name or property name of angular's scope",true if execute function other false,"scope Element or Element's Id","param or target value for changed")
+# Example(get user.name value)
+DynamicAngularScope.scopeProperty("user.name",false,"user_controller","new name");
 
 # Example(change user.name value)
-updateAngularScope("user.name",false,"userinfo","new name");
+DynamicAngularScope.setScopeProperty("user.name",false,"user_controller","new name");
 
-# Example(execute verifies.updateVerifyCode)
-updateAngularScope("verifies.updateVerifyCode",true,"userinfo");
+# Example for ElementId(execute function -> verifies.updateVerifyCode)
+DynamicAngularScope.callScopeFunction("verifies.updateVerifyCode","user_controller");
+
+# Example for ElementId(execute function and get result -> verifies.getServerTime)
+DynamicAngularScope.callScopeFunctionGetResult("verifies.getServerTime","user_controller");
+
+# You can like this do,^_^
+var scopeEleId = "sample_controller";
+window.DynamicAngularScopeWithThisPage = {
+    callScope: function (key, isFunc, isGetResult, valueOrParam) { 
+      return DynamicAngularScope.callScope(key, isFunc, isGetResult, scopeEleId, valueOrParam); 
+    },
+    scopeProperty: function (key, valueOrParam) { return DynamicAngularScope.scopeProperty(key, scopeEleId, valueOrParam); },
+    setScopeProperty: function (key, valueOrParam) { return DynamicAngularScope.setScopeProperty(key, scopeEleId, valueOrParam); },
+    callScopeFunction: function (key, valueOrParam) { return DynamicAngularScope.callScopeFunction(key, scopeEleId, valueOrParam); },
+    callScopeFunctionGetResult: function (key, valueOrParam) {
+      return DynamicAngularScope.callScopeFunctionGetResult(key, scopeEleId, valueOrParam); 
+    }
+}
+then 
+DynamicAngularScopeWithThisPage.xxxx
