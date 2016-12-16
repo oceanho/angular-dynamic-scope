@@ -1,9 +1,4 @@
-/**
-*
-*
-*
-*
-*/    
+   
 ; (function ($angular, $window) {
         'use strict';
         function getOrUpdateAngularScope(key, isFun, isGetResult, elOrElIdOrNgScope, valueOrParam) {
