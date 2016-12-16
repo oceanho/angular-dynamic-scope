@@ -16,6 +16,9 @@
                 throw new Error("invalid elOrElIdOrNgScope,elOrElIdOrNgScope should be Element/NgScope/ElementId");
             }
             var evalExpression = "";
+            if (valueOrParam instanceof Date) {
+                valueOrParam = valueOrParam.toString();
+            }
             if (typeof valueOrParam !== "string") {
                 debugger;
                 evalExpression = isFun ? "(" + valueOrParam + ")" : (isGetResult ? ("") : ("=eval(" + JSON.stringify(valueOrParam) + ");ngElScope.$apply()"));
