@@ -1,4 +1,4 @@
-function updateAngularScope(key, isFun, elOrelId, valueOrParam) {
+function updateAngularScope(key, isFun, elOrelId, valOrParam) {
         var el;
         if(typeof elOrelId ==="string"){
           el = document.getElementById(elOrelId);
@@ -7,8 +7,12 @@ function updateAngularScope(key, isFun, elOrelId, valueOrParam) {
         }
         var ngElScope = angular.element(el).scope();
         if (isFun) {
-            eval("ngElScope." + key + "(" + valueOrParam + ")");
+            if (valOrParam) {
+                eval("ngElScope." + key + "(" + valOrParam + ")");
+            } else {
+                eval("ngElScope." + key + "()");
+            }
         } else {
-            eval("ngElScope." + key + "=" + valueOrParam + "");
+            eval("ngElScope." + key + "=" + valOrParam + "");
         }
 }
