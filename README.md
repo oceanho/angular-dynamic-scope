@@ -30,6 +30,6 @@ window.DynamicAngularScopeWithThisPage = {
       return DynamicAngularScope.callScopeFunctionGetResult(key, scopeEleId, valueOrParam); 
     }    
 }
-then 
-```
+then like this
 DynamicAngularScopeWithThisPage.xxxx
+```
