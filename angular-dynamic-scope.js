@@ -20,7 +20,8 @@
                 valueOrParam = valueOrParam.toString();
             }
             if (typeof valueOrParam !== "string") {
-                evalExpression = isFun ? "(" + valueOrParam + ")" : (isGetResult ? ("") : ("=eval(" + JSON.stringify(valueOrParam) + ");ngElScope.$apply()"));
+                var _vOrP = JSON.stringify(valueOrParam);
+                evalExpression = isFun ? "(eval(" + _vOrP + "))" : (isGetResult ? ("") : ("=eval(" + _vOrP + ");ngElScope.$apply()"));
             } else {
                 evalExpression = isFun ? "(\"" + valueOrParam + "\")" : (isGetResult ? ("") : ("=\"" + valueOrParam + "\";ngElScope.$apply()"));
             }
