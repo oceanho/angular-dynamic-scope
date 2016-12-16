@@ -1,7 +1,7 @@
 # angular-dynamic-scope
 It's update property or execute function at any where for Angular's scope
 
-# how use?
+# how to use?
 include angular-dynamic-scope.js to your project,and like fllow ↓
 
 # Example(get user.name value)
@@ -19,6 +19,7 @@ DynamicAngularScope.callScopeFunctionGetResult("verifies.getServerTime","user_co
 # You can like this do,^_^
 var scopeEleId = "sample_controller";
 window.DynamicAngularScopeWithThisPage = {
+
     callScope: function (key, isFunc, isGetResult, valueOrParam) { 
       return DynamicAngularScope.callScope(key, isFunc, isGetResult, scopeEleId, valueOrParam); 
     },
@@ -28,6 +29,7 @@ window.DynamicAngularScopeWithThisPage = {
     callScopeFunctionGetResult: function (key, valueOrParam) {
       return DynamicAngularScope.callScopeFunctionGetResult(key, scopeEleId, valueOrParam); 
     }
+    
 }
 then 
 DynamicAngularScopeWithThisPage.xxxx
